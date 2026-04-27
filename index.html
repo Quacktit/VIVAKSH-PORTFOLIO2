@@ -1,310 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio — Minimal</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Vivaksh Vankar | Researcher & Developer</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div class="loader" id="loader">
-    <div class="loader-bar" id="loaderBar"></div>
-    <span class="loader-text" id="loaderText">0%</span>
-  </div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
 
-  <!-- NAV -->
   <nav class="nav" id="nav">
-    <div class="nav-brand">
-      <span class="brand-first">YOUR</span>
-      <span class="brand-last">NAME</span>
+    <div class="nav-logo">VIVAKSH</div>
+    
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
     </div>
-    <ul class="nav-links">
+
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li class="mobile-only"><a href="mailto:vivaksh.business@gmail.com" class="nav-cta">CONNECT</a></li>
     </ul>
-    <div class="nav-right">
-      <span class="nav-status">● Available</span>
-    </div>
+
+    <a href="mailto:vivaksh.business@gmail.com?subject=Strategic Inquiry" class="desktop-only">
+      <button class="nav-cta">CONNECT</button>
+    </a>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow reveal">Creative Developer & Designer</p>
-      <h1 class="hero-headline reveal">
-        Crafting<br>
-        <em>Meaningful</em><br>
-        Digital Work.
+    <div class="hero-bg-text">PORTFOLIO</div>
+    <div class="hero-content">
+      <h1 class="hero-title reveal">
+        <span class="line">VIVAKSH</span>
+        <span class="line accent">VANKAR</span>
       </h1>
-      <div class="hero-cta-row reveal">
-        <a href="#work" class="cta-main">View Projects</a>
-        <span class="cta-divider">or</span>
-        <a href="#contact" class="cta-secondary">Start a Conversation →</a>
+      <p class="hero-sub reveal">Interdisciplinary Developer specializing in the intersection of Computational Biology and Scalable Digital Systems.</p>
+      <div class="hero-actions reveal">
+        <a href="#work" class="btn-primary">View Portfolio</a>
+        <a href="mailto:vivaksh.business@gmail.com" class="btn-ghost">Collaborate</a>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-portrait reveal">
-        <div class="portrait-inner">
-          <span class="portrait-initials">YN</span>
-        </div>
-        <div class="portrait-caption">
-          <span>Based in Your City</span>
-          <span class="dot">·</span>
-          <span>Open to Remote</span>
-        </div>
-      </div>
-      <div class="hero-meta reveal">
-        <div class="meta-item"><span class="meta-num">50+</span><span class="meta-label">Projects Delivered</span></div>
-        <div class="meta-item"><span class="meta-num">5 yrs</span><span class="meta-label">Experience</span></div>
-      </div>
+    
+    <div class="hero-scroll desktop-only">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat reveal"><span class="stat-num">PCB</span><span class="stat-label">Academic Core</span></div>
+      <div class="stat reveal"><span class="stat-num">Dry-Lab</span><span class="stat-label">Research Focus</span></div>
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="ticker">
-    <div class="ticker-inner">
-      <span>Web Design</span><span class="sep">—</span>
-      <span>Development</span><span class="sep">—</span>
-      <span>UI/UX Strategy</span><span class="sep">—</span>
-      <span>Branding</span><span class="sep">—</span>
-      <span>Motion</span><span class="sep">—</span>
-      <span>Consulting</span><span class="sep">—</span>
-      <span>Web Design</span><span class="sep">—</span>
-      <span>Development</span><span class="sep">—</span>
-      <span>UI/UX Strategy</span><span class="sep">—</span>
-      <span>Branding</span><span class="sep">—</span>
-      <span>Motion</span><span class="sep">—</span>
-      <span>Consulting</span><span class="sep">—</span>
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Computational Biology</span><span class="dot">●</span>
+      <span>Web Architecture</span><span class="dot">●</span>
+      <span>Interdisciplinary Research</span><span class="dot">●</span>
+      <span>Digital Solutions</span><span class="dot">●</span>
+      <span>Interface Design</span><span class="dot">●</span>
+      <span>Data Analysis</span><span class="dot">●</span>
     </div>
   </div>
 
-  <!-- ABOUT -->
-  <section class="about section" id="about">
-    <div class="container">
-      <div class="about-layout">
-        <div class="about-label-col">
-          <span class="side-label reveal">About</span>
-        </div>
-        <div class="about-content-col">
-          <h2 class="about-heading reveal">I'm a multidisciplinary creator who believes <em>design is never just aesthetic</em> — it's a problem-solving tool.</h2>
-          <div class="about-body reveal">
-            <p>I blend sharp design sensibility with technical depth to create digital experiences that are not only beautiful but genuinely purposeful. My work spans full-stack development, interaction design, and brand identity.</p>
-            <p>I've had the privilege of working with startups, studios, and established companies across Europe and Asia. I bring the same level of care and craft to every project regardless of scale.</p>
-          </div>
-          <div class="about-fact-row reveal">
-            <div class="fact"><span class="fact-title">Education</span><span class="fact-val">B.Tech Computer Science</span></div>
-            <div class="fact"><span class="fact-title">Location</span><span class="fact-val">Your City, Country</span></div>
-            <div class="fact"><span class="fact-title">Languages</span><span class="fact-val">English, Hindi</span></div>
-          </div>
-          <a href="#" class="text-link reveal">Download CV <span>↓</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section class="work section" id="work">
-    <div class="container">
-      <div class="section-intro">
-        <span class="side-label reveal">Selected Work</span>
-        <h2 class="work-heading reveal">Recent Projects</h2>
-      </div>
-
-      <div class="work-list">
-        <article class="work-item reveal" data-num="01">
-          <div class="work-item-top">
-            <div class="work-num">01</div>
-            <div class="work-meta">
-              <span class="work-type">Full-Stack · E-Commerce</span>
-              <span class="work-year">2024</span>
-            </div>
-          </div>
-          <h3 class="work-title">E-Commerce Platform</h3>
-          <p class="work-desc">A robust, performant online store with custom CMS, real-time inventory, and an obsessively refined checkout flow.</p>
-          <div class="work-item-bottom">
-            <div class="work-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
-            <a href="#" class="work-link">Case Study →</a>
-          </div>
-          <div class="work-visual" style="background: linear-gradient(135deg,#e8e0d4 0%,#c8bfb2 100%)">
-            <span class="work-visual-label">E-COM</span>
-          </div>
-        </article>
-
-        <article class="work-item reveal" data-num="02">
-          <div class="work-item-top">
-            <div class="work-num">02</div>
-            <div class="work-meta">
-              <span class="work-type">SaaS · Analytics</span>
-              <span class="work-year">2024</span>
-            </div>
-          </div>
-          <h3 class="work-title">SaaS Analytics Dashboard</h3>
-          <p class="work-desc">Real-time data visualization platform with role-based access, custom reports, and a meticulous design system.</p>
-          <div class="work-item-bottom">
-            <div class="work-tags"><span>Vue</span><span>D3.js</span><span>Firebase</span></div>
-            <a href="#" class="work-link">Case Study →</a>
-          </div>
-          <div class="work-visual" style="background: linear-gradient(135deg,#d4dce8 0%,#b2becc 100%)">
-            <span class="work-visual-label">SAAS</span>
-          </div>
-        </article>
-
-        <article class="work-item reveal" data-num="03">
-          <div class="work-item-top">
-            <div class="work-num">03</div>
-            <div class="work-meta">
-              <span class="work-type">Brand · Identity</span>
-              <span class="work-year">2023</span>
-            </div>
-          </div>
-          <h3 class="work-title">Fintech Brand Identity</h3>
-          <p class="work-desc">Complete visual identity for a fintech startup — from logo conception to motion guidelines and digital touchpoints.</p>
-          <div class="work-item-bottom">
-            <div class="work-tags"><span>Figma</span><span>Illustrator</span><span>AE</span></div>
-            <a href="#" class="work-link">Case Study →</a>
-          </div>
-          <div class="work-visual" style="background: linear-gradient(135deg,#d4e8d4 0%,#b2ccb2 100%)">
-            <span class="work-visual-label">BRAND</span>
-          </div>
-        </article>
-
-        <article class="work-item reveal" data-num="04">
-          <div class="work-item-top">
-            <div class="work-num">04</div>
-            <div class="work-meta">
-              <span class="work-type">Mobile · Health</span>
-              <span class="work-year">2023</span>
-            </div>
-          </div>
-          <h3 class="work-title">Health Tracking App</h3>
-          <p class="work-desc">Cross-platform app with AI health insights, seamless wearable sync, and an intuitive, calming UI.</p>
-          <div class="work-item-bottom">
-            <div class="work-tags"><span>React Native</span><span>Python</span><span>AWS</span></div>
-            <a href="#" class="work-link">Case Study →</a>
-          </div>
-          <div class="work-visual" style="background: linear-gradient(135deg,#e8d4d4 0%,#ccb2b2 100%)">
-            <span class="work-visual-label">HEALTH</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services section" id="services">
-    <div class="container">
-      <div class="services-layout">
-        <div class="services-left">
-          <span class="side-label reveal">Services</span>
-          <h2 class="services-heading reveal">What I<br><em>Offer</em></h2>
-        </div>
-        <div class="services-right">
-          <div class="service-row reveal">
-            <div class="service-icon">01</div>
-            <div class="service-body">
-              <h3>Web Design & Development</h3>
-              <p>End-to-end web experiences from concept to deployment — responsive, performant, and accessible.</p>
-            </div>
-          </div>
-          <div class="service-row reveal">
-            <div class="service-icon">02</div>
-            <div class="service-body">
-              <h3>UI/UX Design</h3>
-              <p>Research-led interface design that balances clarity, aesthetics, and user psychology.</p>
-            </div>
-          </div>
-          <div class="service-row reveal">
-            <div class="service-icon">03</div>
-            <div class="service-body">
-              <h3>Brand Identity</h3>
-              <p>Visual identity systems that communicate character and build lasting recognition across all touchpoints.</p>
-            </div>
-          </div>
-          <div class="service-row reveal">
-            <div class="service-icon">04</div>
-            <div class="service-body">
-              <h3>Consulting & Strategy</h3>
-              <p>Strategic guidance on product direction, design systems, and technical architecture.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact section" id="contact">
-    <div class="container">
-      <div class="contact-layout">
-        <div class="contact-left">
-          <span class="side-label reveal">Contact</span>
-          <h2 class="contact-heading reveal">Let's Make<br><em>Something</em><br>Together.</h2>
-          <div class="contact-info reveal">
-            <p>hello@yourname.com</p>
-            <p>+91 98765 43210</p>
-          </div>
-        </div>
-        <div class="contact-right">
-          <form class="contact-form reveal" id="contactForm">
-            <div class="field">
-              <label>Full Name</label>
-              <input type="text" placeholder="Your name" required />
-            </div>
-            <div class="field">
-              <label>Email</label>
-              <input type="email" placeholder="your@email.com" required />
-            </div>
-            <div class="field">
-              <label>Project Type</label>
-              <select>
-                <option value="">Select a service</option>
-                <option>Web Design & Development</option>
-                <option>UI/UX Design</option>
-                <option>Brand Identity</option>
-                <option>Consulting</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Message</label>
-              <textarea rows="5" placeholder="Tell me about your project..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">YOUR NAME</div>
-        <div class="footer-nav">
-          <a href="#about">About</a>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-socials">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Dribbble</a>
+      <div class="footer-top">
+        <div class="footer-logo">VIVAKSH VANKAR</div>
+        <div class="footer-links">
+          <a href="https://github.com/Quacktit">GitHub</a>
+          <a href="https://www.linkedin.com/in/vivaksh-vankar/">LinkedIn</a>
+          <a href="mailto:vivaksh.business@gmail.com">Gmail</a>
         </div>
       </div>
-      <div class="footer-base">
-        <span>© 2025 Your Name</span>
-        <span>Designed & Developed by You</span>
+      <div class="footer-bottom">
+        <span>© 2026 VIVAKSH VANKAR.</span>
       </div>
     </div>
   </footer>
+
+  <button id="backToTop" class="back-to-top">↑</button>
 
   <script src="script.js"></script>
 </body>
