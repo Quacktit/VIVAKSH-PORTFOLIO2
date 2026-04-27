@@ -1,98 +1,62 @@
-/* --- ADD TO THE TOP OF YOUR CSS --- */
-.desktop-only { display: flex; }
-.mobile-only { display: none; }
+// ---- MOBILE MENU TOGGLE ----
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+const navA = document.querySelectorAll('.nav-links a');
 
-/* Hide Custom Cursor on Touch Devices */
-@media (hover: none) and (pointer: coarse) {
-  .cursor, .cursor-follower { display: none !important; }
-  body { cursor: auto !important; }
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
 }
 
-/* --- MOBILE NAVIGATION LOGIC --- */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 1001;
-}
+// Close menu when a link is clicked
+navA.forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
 
-.nav-toggle span {
-  width: 30px;
-  height: 2px;
-  background: var(--accent);
-  transition: 0.3s;
-}
-
-/* --- BACK TO TOP BUTTON --- */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-  z-index: 999;
-  box-shadow: 0 4px 15px rgba(255, 77, 0, 0.3);
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* --- RESPONSIVE OVERRIDES --- */
-@media (max-width: 900px) {
-  .desktop-only { display: none !important; }
-  .mobile-only { display: block; }
-  
-  .nav-toggle { display: flex; }
-
-  .nav-links {
-    position: fixed;
-    top: 0; right: -100%;
-    width: 80%; height: 100vh;
-    background: var(--bg);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+// ---- BACK TO TOP LOGIC ----
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
   }
+});
 
-  .nav-links.active { right: 0; }
-  
-  .nav-links a { font-size: 24px; font-family: var(--font-display); }
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-  /* Hero Adjustments */
-  .hero-title { font-size: 70px; }
-  .hero-bg-text { display: none; }
-  .hero-stats {
-    position: relative;
-    right: auto; top: auto;
-    transform: none;
-    flex-direction: row;
-    gap: 20px;
-    margin-top: 40px;
+// ---- MODIFIED CURSOR (Prevent Mobile Issues) ----
+const cursor = document.getElementById('cursor');
+const follower = document.getElementById('cursorFollower');
+
+// Only run mouse logic if not a touch device
+if (window.matchMedia("(pointer: fine)").matches) {
+  let mouseX = 0, mouseY = 0;
+  let followerX = 0, followerY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+
+  function animateFollower() {
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    requestAnimationFrame(animateFollower);
   }
-  .stat-num { font-size: 32px; }
-  
-  /* Section Spacing */
-  .section { padding: 80px 0; }
+  animateFollower();
 }
 
-/* Hamburger Animation */
-.nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.nav-toggle.active span:nth-child(2) { opacity: 0; }
-.nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+// ---- ALL OTHER REVEAL/SKILL LOGIC REMAINS SAME ----
+// ... (Include your existing IntersectionObserver logic here)
