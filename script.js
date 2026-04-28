@@ -29,7 +29,6 @@ if (!isTouchDevice) {
   }
   animateFollower();
 
-  // Hide cursor when leaving window
   document.addEventListener('mouseleave', () => {
     cursor.style.opacity = '0';
     follower.style.opacity = '0';
@@ -73,9 +72,9 @@ window.addEventListener('scroll', () => {
 const backTopBtn = document.getElementById('backTop');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 400) {
-    backTopBtn.classList.add('show');
+    backTopBtn.style.display = 'flex';
   } else {
-    backTopBtn.classList.remove('show');
+    backTopBtn.style.display = 'none';
   }
 });
 
@@ -148,7 +147,7 @@ heroLines.forEach((line, i) => {
   }, 300 + i * 150);
 });
 
-// ---- CONTACT FORM (Fixed Mailto Bug) ----
+// ---- CONTACT FORM ----
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', (e) => {
@@ -159,7 +158,6 @@ if (form) {
     btn.textContent = 'Opening Mail Client... ✓';
     btn.style.background = '#059669';
 
-    // Fetch values safely
     const name = document.getElementById('contactName').value;
     const email = document.getElementById('contactEmail').value;
     const subject = document.getElementById('contactSubject').value || 'Inquiry';
@@ -197,24 +195,4 @@ window.addEventListener('scroll', () => {
     const y = window.scrollY * 0.3;
     bgText.style.transform = `translate(-50%, calc(-50% + ${y}px))`;
   }
-});
-
-// ---- ACTIVE NAV LINK ON SCROLL ----
-const sections = document.querySelectorAll('section[id]');
-const scrollNavLinks = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute('id');
-    }
-  });
-  scrollNavLinks.forEach(link => {
-    link.style.color = '';
-    if (link.getAttribute('href') === '#' + current) {
-      link.style.color = 'var(--text)';
-    }
-  });
 });
